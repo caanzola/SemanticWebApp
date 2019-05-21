@@ -16,7 +16,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      location: 'Home',
+      location: 'Semantic Web App',
       instancia: null,
       clase: null,
       propiedad: null

@@ -5,7 +5,7 @@ export default class Instancias extends Component {
     super(props);
 
     this.state = {
-      instancias: ['instancia 1', 'instancia2', 'instancia3'],
+      instancias: [],
       instanciaBuscada: '',
     };
 
@@ -33,6 +33,27 @@ export default class Instancias extends Component {
         <td><a onClick={this.props.onChange.bind(this, inst)} href="#instanciaDetail">{inst}</a></td>
       </tr>
     );
+  }
+
+  componentDidMount() {
+
+    fetch('/query/instancias', {
+      method: 'GET',
+
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      console.log(json);
+
+      let queryResult = json.results.bindings;
+
+      this.setState({
+        instancias: queryResult,
+      })
+
+
+    })
+    .catch((error) => console.log(error));
   }
 
   render() {
