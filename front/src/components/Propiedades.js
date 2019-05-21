@@ -46,13 +46,14 @@ export default class Propiedades extends Component {
   }
 
   renderPropiedades() {
+    console.log(this.state.propiedades);
     return this.state.propiedades.map((propi, i) =>
     <li>
         <a
-          onClick={this.props.onChange.bind(this, propi)}
+          onClick={this.props.onChange.bind(this, propi.s.value)}
           href="#propiedadInformacion"
         >
-          {propi}
+          {propi.s.value}
         </a>
       </li>
     );
