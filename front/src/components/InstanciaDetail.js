@@ -10,7 +10,7 @@ export default class InstanciaDetail extends Component {
     return (
       <div>
         <div className="container">
-          <h3>Instancia: {this.props.instancia}</h3>
+          <h3>{this.props.instancia}</h3>
           <p>Información de la instancia</p>
         </div>
       </div>

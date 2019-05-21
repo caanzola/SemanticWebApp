@@ -34,20 +34,20 @@ class App extends Component {
 
   handleInstanciaClick(idInstancia) {
     this.setState({ instancia: idInstancia });
-    this.setState({ location: "InstanciaDetail" });
+    this.setState({ location: "Información de la instancia" });
   }
 
   handleClaseClick(idClase) {
     this.setState({
       clase: idClase,
-      location: "ClaseDetail"
+      location: "Información de la clase"
     });
   }
 
   handlePropiedadClick(idPropiedad) {
     this.setState({
       propiedad: idPropiedad,
-      location: "PropiedadDetail"
+      location: "Información de la propiedad"
     });
   }
 
@@ -59,16 +59,16 @@ class App extends Component {
       pantalla = <Clases onChange={this.handleClaseClick} />;
     } else if (this.state.location === "Propiedades") {
       pantalla = <Propiedades onChange={this.handlePropiedadClick} />;
-    } else if (this.state.location === "InstanciaDetail") {
+    } else if (this.state.location === "Información de la instancia") {
       pantalla = <InstanciaDetail instancia={this.state.instancia} />;
-    } else if (this.state.location === "ClaseDetail") {
+    } else if (this.state.location === "Información de la clase") {
       pantalla = (
         <ClaseDetail
           onChange={this.handleInstanciaClick}
           clase={this.state.clase}
         />
       );
-    } else if (this.state.location === "PropiedadDetail") {
+    } else if (this.state.location === "Información de la propiedad") {
       pantalla = (
         <PropiedadDetail
           onChange={this.handleInstanciaClick}

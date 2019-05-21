@@ -29,7 +29,7 @@ export default class Propiedades extends Component {
     <li>
         <a
           onClick={this.props.onChange.bind(this, propi)}
-          href="#claseDetail"
+          href="#propiedadInformacion"
         >
           {propi}
         </a>
