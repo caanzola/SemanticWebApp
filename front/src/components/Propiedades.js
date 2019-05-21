@@ -5,7 +5,7 @@ export default class Propiedades extends Component {
     super(props);
 
     this.state = {
-      propiedades: ['propiedad 1', 'propiedad 2', 'propiedad 3'],
+      propiedades: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,6 +22,27 @@ export default class Propiedades extends Component {
     e.preventDefault();
     let uriEntidad = this.state.instanciaBuscada;
     console.log(uriEntidad);
+  }
+
+  componentDidMount() {
+
+    fetch('/query/propiedades', {
+      method: 'GET',
+
+    }).then((response) => {
+      return response.json();
+    }).then((json) => {
+      console.log(json);
+
+      let queryResult = json.results.bindings;
+
+      this.setState({
+        propiedades: queryResult,
+      })
+
+
+    })
+    .catch((error) => console.log(error));
   }
 
   renderPropiedades() {

@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 /**
 * This class contains all needed to display the nav bar on top.
+<a className='nav-item nav-link' onClick={this.state.onChange.bind(this, 'Viz')} href={'#viz'}>Graphs</a>
 */
 export default class Navbar extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className='fixed-top'>
+        
         <nav id='navbar_home' className='navbar navbar-expand-lg navbar-light bg-light'>
           <a id='nombre_nav' className='navbar-brand' 
              href={'#'}>
@@ -33,6 +35,7 @@ export default class Navbar extends Component {
       </li>
     </ul>
           
+
         </nav>
       
       </div>
