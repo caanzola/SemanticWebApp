@@ -30,7 +30,7 @@ export default class Instancias extends Component {
       <li>
         <a
           onClick={this.props.onChange.bind(this, inst)}
-          href="#instanciaDetail"
+          href="#instanciaInformacion"
         >
           {inst}
         </a>

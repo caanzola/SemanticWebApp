@@ -51,7 +51,7 @@ export default class Clases extends Component {
          <li>
          <a
            onClick={this.props.onChange.bind(this, obj.s.value)}
-           href="#claseDetail"
+           href="#claseInformacion"
          >
            {obj.s.value}
          </a>
