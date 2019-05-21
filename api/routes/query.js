@@ -8,11 +8,11 @@ router.get('/clases', (req, res, next) => {
 
   let url = 'http://172.24.101.52:9000/repositories/repo1?query=';
 
-  let consultaBuena = 'PREFIX%20rdf:%20%3Chttp:%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20:%20%3Chttp:%2F%2Fwww.1.semanticweb.uniandes.edu.co%2Fcurso%2Facademicpapers%2F%3E%0APREFIX%20owl:%20%3Chttp:%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0Aselect%20%3Fs%20where%20%7B%20%0A%09%3Fs%20rdf:type%20owl:Class%0A%7D%20%0A';
+  let query = 'PREFIX%20rdf:%20%3Chttp:%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20:%20%3Chttp:%2F%2Fwww.1.semanticweb.uniandes.edu.co%2Fcurso%2Facademicpapers%2F%3E%0APREFIX%20owl:%20%3Chttp:%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0Aselect%20%3Fs%20where%20%7B%20%0A%09%3Fs%20rdf:type%20owl:Class%0A%7D%20%0A';
 
   
 
-  let finalUrl2 = url + consultaBuena;
+  let finalUrl2 = url + query;
   console.log(finalUrl2);
 
   fetch(finalUrl2, {
@@ -45,11 +45,11 @@ router.get('/propiedades', (req, res, next) => {
 
   let url = 'http://172.24.101.52:9000/repositories/repo1?query=';
 
-  let consultaBuena = 'PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+%3A+%3Chttp%3A%2F%2Fwww.1.semanticweb.uniandes.edu.co%2Fcurso%2Facademicpapers%2F%3E%0APREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aselect+%3Fs+where+%7B+%0A++++%7B%3Fs+rdf%3Atype+owl%3ADatatypeProperty%7D%0A++++union%0A++++%7B%3Fs+rdf%3Atype+owl%3AObjectProperty%7D%0A%7D+%0A';
+  let query = 'PREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX+%3A+%3Chttp%3A%2F%2Fwww.1.semanticweb.uniandes.edu.co%2Fcurso%2Facademicpapers%2F%3E%0APREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0Aselect+%3Fs+where+%7B+%0A++++%7B%3Fs+rdf%3Atype+owl%3ADatatypeProperty%7D%0A++++union%0A++++%7B%3Fs+rdf%3Atype+owl%3AObjectProperty%7D%0A%7D+%0A';
 
   
 
-  let finalUrl2 = url + consultaBuena;
+  let finalUrl2 = url + query;
   console.log(finalUrl2);
 
   fetch(finalUrl2, {

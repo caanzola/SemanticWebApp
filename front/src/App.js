@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Instancias from "./components/Instancias";
 import Clases from "./components/Clases";
 import Propiedades from "./components/Propiedades";
-import Viz from "./components/viz";
 import InstanciaDetail from "./components/InstanciaDetail";
 import ClaseDetail from "./components/ClaseDetail";
 import PropiedadDetail from "./components/PropiedadDetail";
@@ -76,9 +75,7 @@ class App extends Component {
           propiedad={this.state.propiedad}
         />
       );
-    } else if (this.state.location === "Viz") {
-      pantalla = <Viz />;
-    }
+    } 
 
     return (
       <div className="App container">
