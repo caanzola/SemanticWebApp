@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Instancias extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Instancias extends Component {
 
   handleSearchChange(event) {
     this.setState({
-      instanciaBuscada :event.target.value,
+      instanciaBuscada: event.target.value
     });
   }
 
@@ -23,16 +23,19 @@ export default class Instancias extends Component {
     e.preventDefault();
     let uriEntidad = this.state.instanciaBuscada;
     console.log(uriEntidad);
-    alert('Buscar ' + uriEntidad);
   }
 
   renderInstancias() {
-    return this.state.instancias.map((inst, i) =>
-      <tr>
-        <th scope="row">{i}</th>
-        <td><a onClick={this.props.onChange.bind(this, inst)} href="#instanciaDetail">{inst}</a></td>
-      </tr>
-    );
+    return this.state.instancias.map((inst, i) => (
+      <li>
+        <a
+          onClick={this.props.onChange.bind(this, inst)}
+          href="#instanciaDetail"
+        >
+          {inst}
+        </a>
+      </li>
+    ));
   }
 
   componentDidMount() {
@@ -58,27 +61,38 @@ export default class Instancias extends Component {
 
   render() {
     return (
-      <div>
-        <div className="searchDiv">
-          <form id="buscadorInstancias" onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <input type="text" id="inputBuscadorInstancias" placeholder="Buscar Instancia" onChange={this.handleSearchChange}/>
-              <button type="submit" className="btn btn-primary">Buscar</button>
-            </div>
-          </form>
-        </div>
-        <table className="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Instancia</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.renderInstancias()}
-          </tbody>
-        </table>
+      <div className="searchDiv">
+        <form
+          class="form-inline "
+          id="buscadorInstancias"
+          onSubmit={this.handleSubmit}
+        >
+          <div class="form-group mb-2">
+            <input
+              type="text"
+              readonly
+              class="form-control-plaintext"
+              id="staticEmail2"
+              value="Nombre de la instancia"
+            />
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="inputBuscadorInstancias"
+              placeholder="instancia"
+              onChange={this.handleSearchChange}
+            />
+          </div>
+          <button type="submit" class="btn btn-info mb-2">
+            Buscar
+          </button>
+        </form>
+        <ul>
+          <li>{this.renderInstancias()}</li>
+        </ul>
       </div>
-    )
+    );
   }
 }

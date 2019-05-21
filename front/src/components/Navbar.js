@@ -17,15 +17,25 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className='fixed-top'>
-        <nav id='navbar_home' className='navbar navbar-dark bg-dark'>
+        
+        <nav id='navbar_home' className='navbar navbar-expand-lg navbar-light bg-light'>
+          <a id='nombre_nav' className='navbar-brand' 
+             href={'#'}>
+             Academic papers
+          </a>
+          <ul class="navbar-nav">
+      <li class="nav-item active">
+      <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Instancias')} href={'#instancias'}>Instancias</a>
+      </li>
+      <li class="nav-item">
+      <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Clases')} href={'#clases'}>Clases</a>
+      </li>
+      <li class="nav-item">
+      <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Propiedades')} href={'#propiedades'}>Propiedades</a>
+      </li>
+    </ul>
           
-          <a className='nav-item nav-link' onClick={this.state.onChange.bind(this, 'Viz')} href={'#viz'}></a>
-           <a className='nav-item nav-link' onClick={this.state.onChange.bind(this, 'Viz')} href={'#viz'}></a>
-          <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Clases')} href={'#clases'} style={{ color: 'white' }}>Clases</a>
-          <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Instancias')} href={'#instancias'} style={{ color: 'white' }}>Instancias</a>
-          <a className='nav-item nav-link ' onClick={this.state.onChange.bind(this, 'Propiedades')} href={'#propiedades'} style={{ color: 'white' }} >Propiedades</a>
-          <a className='nav-item nav-link' onClick={this.state.onChange.bind(this, 'Viz')} href={'#viz'}></a>
-           <a className='nav-item nav-link' onClick={this.state.onChange.bind(this, 'Viz')} href={'#viz'}></a>
+
         </nav>
       
       </div>
